@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: lightgray;
+    background: antiquewhite;
 }
 
 /* 클래스 이름 */
@@ -41,7 +41,7 @@ header .icons span{
     cursor: pointer;
     text-align: center;
     line-height: 38px;
-    border-radius: 50px;
+    border-radius: 50%;
 }
 header .icons span:hover {
     background: #f2f2f2;
@@ -49,8 +49,58 @@ header .icons span:hover {
 header .icons span:last-child {
     margin-right: -10px;
 }
+
+.calendar {
+    padding: 20px;
+}
+
 .calendar ul{
     display: flex;
     list-style: none;
     flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar .days {
+    margin-bottom: 20px;
+}
+
+.calendar .weeks li {
+    font-weight: 600;
+}
+.calendar ul li {
+    position: relative;
+    width: calc(100%/7); /* calc(숫자 연산자 숫자) - 반응형 디자인 시에 쓰이는 영역등분 or  가변적인 길이와 고정 길이의 계산 */
+}
+.calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.days li.inactive {
+    color:#aaa;
+}
+.days li.active {
+    color: coral;
+}
+
+
+.calendar .days li::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.days li:hover::before {
+    background: #f2f2f2;
+}
+
+.days li.active::before {
+    background: antiquewhite;
 }
