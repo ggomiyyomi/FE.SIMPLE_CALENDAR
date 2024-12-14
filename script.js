@@ -15,6 +15,7 @@ const months = ["January","February","March","Aprill","May","June","July","Augus
 
 // console.log(date,currYear,currMonth);
 const renderCalendar = () => {
+    let today = new Date(); //오늘 날짜
     let firstDayofMonth = new Date(currYear,currMonth, 1).getDay(), // 이전달 마지막일자표시 28, 29, 30 ...
     lastDateofMonth = new Date(currYear,currMonth+1, 0).getDate(), // 해당월의 마지막일 ()
     lastDayofMonth = new Date(currYear,currMonth, lastDateofMonth).getDay(), // 다음달 첫번째일자 표시 1,2,3 ...
@@ -31,8 +32,10 @@ const renderCalendar = () => {
     for (let i = 1; i <= lastDateofMonth; i++) { // 해당 달의 모든 날짜
 
         // 현재 년,월,일이 모두 일치하면 , 현재날짜에 표시
-        let isToday = i === date.getDate() && currMonth === new Date().getMonth()
-                            && currYear === new Date().getFullYear() ? "active" : ""; 
+        // let isToday = i === date.getDate() && currMonth === new Date().getMonth()
+        //                     && currYear === new Date().getFullYear() ? "active" : ""; 
+        let isToday = i === today.getDate() && currMonth === today.getMonth()
+                    && currYear === today.getFullYear() ? "active" : ""; 
         // console.log(i);
         liTag += `<li class="${isToday}">${i}</li>`;
     }
