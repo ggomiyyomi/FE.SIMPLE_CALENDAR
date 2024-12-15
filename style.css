@@ -15,7 +15,7 @@ body {
 }
 
 /* 일정추가버튼 */
-.add-schedule{
+/* .add-schedule{
     display: flex;
     justify-content: end;
     padding: 15px 5px;
@@ -24,15 +24,28 @@ body {
 button {
     cursor: pointer;
     padding: 10px 14px;
-    /* border-style: dotted; */
     border-radius: 10px;
-    /* border-color: coral;
-    background-color: white; */
     border: none;
     background: rgb(255, 162, 129);
     color: white;
 }
 
+button:hover {
+    background-color:rgb(252, 154, 119);
+} */
+
+/* 일정 추가 모달창 */
+/* .overlay {
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+} */
+
+
+/* 캘린더 */
 /* 클래스 이름 */
 .wrapper{
     width: 700px;

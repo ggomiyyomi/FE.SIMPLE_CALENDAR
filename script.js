@@ -1,6 +1,7 @@
 const currentDate = document.querySelector(".current-date"),
 daysTag = document.querySelector(".days"),
 prevNectIcon = document.querySelectorAll(".icons span");
+// addbutton = document.querySelectorAll(".show-modal");
 
 
 // 현재 year과 month 업데이트 
@@ -69,3 +70,13 @@ prevNectIcon.forEach(icon => {
 
     });
 });
+
+
+//일정 추가 버튼
+// addbutton.forEach(button=> {
+//     button.addEventListener("click", () => {
+//         // console.log(button);
+        
+//         renderCalendar();
+//     });
+// });
